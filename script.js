@@ -5,17 +5,16 @@ menu = true;
 function popUp() {
 		let orderList = prompt("WELCOME TO OUR MENU (Please place your order:");
 		for (let i = 0; i < food.length; i++){
-			if (food[i] == orderList){
+			if (food[i].toLowerCase() == orderList.toLowerCase()){
 				foodOrdered = foodOrdered + 1;
-				reply = alert(`You Ordered ${food[i]}`);
-				if (foodOrdered == 1){
-					menu = true;
-					alert("Thanks for using our app, Pleasure to serve you");
-				}
-				return reply;
+				alert(`You Ordered ${food[i]}`);
+				break;
 			}
-		alert("Sorry.., That food is not Available in our menu");
-		return;
 		}
-
+		alert("Sorry.., That food is not available in our menu");
+	}
+		
+if(foodOrdered == 1){
+	menu = true;
+	alert("Thanks for using our app, Pleasure to serve you");
 }
